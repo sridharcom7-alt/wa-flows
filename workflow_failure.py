@@ -8,6 +8,8 @@ def failing_task():
 def retry_task():
     raise Exception("Retrying")
 
+
 @flow
 def failure_workflow():
     failing_task()
+
