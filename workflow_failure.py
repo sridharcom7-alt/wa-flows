@@ -1,4 +1,3 @@
-from prefect import task
 from prefect import flow, task
 
 @task
@@ -13,4 +12,5 @@ def retry_task():
 @flow
 def failure_workflow():
     failing_task()
+
 
