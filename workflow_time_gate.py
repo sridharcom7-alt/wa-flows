@@ -4,7 +4,7 @@ from datetime import datetime
 @task
 def time_check():
     current_hour = datetime.now().hour
-    return 10 <= current_hour <= 11
+    return 11 <= current_hour <= 12
 
 @task
 def gated_task():
