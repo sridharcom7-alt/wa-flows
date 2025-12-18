@@ -1,9 +1,10 @@
 from prefect import flow, task
-@task(retries=3, retry_delay_seconds=5)
-def retry_task():
-    raise Exception("Retrying")
-
-@flow
+ 
+@task
+def failing_task():
+    raise Exception("Simulated failure")
+ 
+@flow(retries=3, retry_delay_seconds=5)
 def failure_workflow():
-    retry_task()
+    failing_task()
  
